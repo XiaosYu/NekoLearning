@@ -1,0 +1,29 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="FreeSpire.XLS" Version="12.7.0" />
+    <PackageReference Include="Microsoft.ML" Version="1.7.1" />
+    <PackageReference Include="Microsoft.ML.LightGbm" Version="1.7.1" />
+    <PackageReference Include="SciSharp.TensorFlow.Redist" Version="2.7.0" />
+    <PackageReference Include="TensorFlow.Keras" Version="0.7.0" />
+    <PackageReference Include="TensorFlow.NET" Version="0.70.1" />
+  </ItemGroup>
+  <ItemGroup Label="MLModelt">
+    <None Include="MLModelt.consumption.cs">
+      <DependentUpon>MLModelt.mbconfig</DependentUpon>
+    </None>
+    <None Include="MLModelt.training.cs">
+      <DependentUpon>MLModelt.mbconfig</DependentUpon>
+    </None>
+    <None Include="MLModelt.zip">
+      <DependentUpon>MLModelt.mbconfig</DependentUpon>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+</Project>
